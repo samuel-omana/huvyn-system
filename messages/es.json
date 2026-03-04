@@ -1,0 +1,309 @@
+{
+  "HomePage": {
+    "title": "Huvyn | Movemos tu mundo. Sin fricción.",
+    "heroTitle": "Logística, Redefinida",
+    "heroSubtitle": "Rápido. Seguro. Global. La evolución del envío está aquí.",
+    "trustBadge": "Red Global de Confianza",
+    "heroBadge": "Clase Estudio",
+    "trackLabel": "RASTREAR",
+    "securityBadge": "Asegurando +$300M en activos globales",
+    "trackButton": "Rastrear Envio",
+    "bento": {
+      "realTimeIntel": "Intel en Tiempo Real",
+      "enterpriseGrade": "Grado Empresarial",
+      "algoPricing": "Precios por Algoritmo"
+    },
+    "trackPlaceholder": "Número de Rastreo",
+    "services": {
+      "tracking": {
+        "title": "Trazabilidad B2B",
+        "desc": "Visibilidad en tiempo real de tu cadena de suministro."
+      },
+      "logistics": {
+        "title": "Logística Inteligente",
+        "desc": "Optimización automatizada para cada paquete."
+      },
+      "rates": {
+        "title": "Tarifas Transparentes",
+        "desc": "Paga por lo que usas, sin sorpresas."
+      }
+    },
+    "socialProof": {
+      "title": "Confiado por innovadores globales:",
+      "logos": [
+        "ACME",
+        "GLOBEX",
+        "SOYLENT",
+        "INITECH",
+        "UMBRELLA",
+        "HUVYN NETWORK"
+      ]
+    },
+    "metrics": {
+      "packages": {
+        "value": "10M+",
+        "label": "Paquetes Entregados"
+      },
+      "accuracy": {
+        "value": "99.9%",
+        "label": "Precisión de Entrega"
+      },
+      "countries": {
+        "value": "150+",
+        "label": "Países Alcanzados"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Soporte Corporativo"
+      }
+    },
+    "testimonials": {
+      "title": "Logística en la que Confían los Líderes",
+      "badge": "Historias de Éxito",
+      "items": [
+        {
+          "quote": "Huvyn transformó nuestra cadena de suministro global. La precisión en la entrega y el seguimiento en tiempo real no tienen precedente.",
+          "author": "Elena Rodríguez",
+          "role": "Directora de Operaciones, TechGlobal"
+        },
+        {
+          "quote": "Buscábamos un socio logístico, encontramos un motor de crecimiento. Su plataforma predictiva redujo nuestros retrasos a cero.",
+          "author": "Marcos Silva",
+          "role": "CEO, NovaCommerce"
+        }
+      ]
+    }
+  },
+  "TrackingPage": {
+    "title": "Huvyn | Rastrear Envío",
+    "header": "Rastrea tu paquete",
+    "subtitle": "Visibilidad en tiempo real para tu cadena de suministro global.",
+    "placeholder": "Ingresa tu número de rastreo (ej. HUV-123456)",
+    "search": "Buscar",
+    "assetId": "Activo #HUV-9821-X",
+    "lastEvent": "Hub de París • 08:30 AM",
+    "prevEvent": "Hub de Madrid • Ayer",
+    "detailedLocation": "Ruta A6, Francia",
+    "velocity": "85 km/h",
+    "status": {
+      "preparing": "Preparando Envío",
+      "transit": "En Tránsito",
+      "outForDelivery": "En Reparto",
+      "delivered": "Entregado"
+    },
+    "details": {
+      "origin": "Origen",
+      "destination": "Destino",
+      "estimatedDelivery": "Entrega Estimada",
+      "currentLocation": "Ubicación Actual",
+      "waiting": "Esperando clave de encriptación del envío para inicializar el tablero",
+      "tomorrow": "Mañana"
+    }
+  },
+  "ServicesPage": {
+    "header": "Soluciones Enterprise",
+    "subtitle": "Infraestructura logística diseñada para corporaciones globales.",
+    "capabilities": {
+      "title": "Capacidades de Próxima Generación",
+      "air": {
+        "title": "Carga Aérea Express",
+        "desc": "Priorización algorítmica de rutas para garantizar la entrega más rápida posible a través de continentes."
+      },
+      "ocean": {
+        "title": "Transporte Marítimo",
+        "desc": "Gestión de contenedores de alto volumen con visibilidad Satelital IoT."
+      },
+      "lastMile": {
+        "title": "Distribución de Última Milla",
+        "desc": "Micro-hubs urbanos alimentados por flota eléctrica para una entrega final silenciosa y sostenible."
+      }
+    },
+    "capabilitiesBadge": "Capacidades",
+    "modulePrefix": "Módulo 0",
+    "statusOptimizing": "Optimizando...",
+    "tech": {
+      "title": "La Pila Tecnológica Huvyn",
+      "desc": "Nuestra ventaja no está en los camiones, está en el código. Utilizamos modelos predictivos para anticipar disrupciones antes de que ocurran."
+    },
+    "cta": {
+      "title": "¿Listo para escalar?",
+      "button": "Hablar con Ventas"
+    }
+  },
+  "AboutPage": {
+    "header": "Nuestra Filosofía",
+    "subtitle": "Impulsando el comercio global a través del software.",
+    "manifestoBadge": "Manifiesto",
+    "manifesto": {
+      "title": "El Manifiesto Huvyn",
+      "p1": "Nacimos de una frustración simple: mover átomos debería ser tan fácil como mover bits. Huvyn es, fundamentalmente, una empresa de tecnología resolviendo el problema lógico más antiguo del mundo.",
+      "p2": "No poseemos camiones ni barcos. Poseemos la capa de inteligencia que orquesta los camiones, barcos y aviones más eficientes del planeta en tiempo real."
+    },
+    "global": {
+      "title": "Alcance Operativo",
+      "hubs": {
+        "value": "45+",
+        "label": "Hubs Logísticos"
+      },
+      "countries": {
+        "value": "150+",
+        "label": "Países Conectados"
+      },
+      "team": {
+        "value": "2.5k",
+        "label": "Ingenieros & Operadores"
+      }
+    }
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "tracking": "Rastreo",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "arch": "Arquitectura",
+    "tagline": "La capa de inteligencia para la orquestación de átomos. Moviendo átomos con precisión a nivel de bits."
+  },
+  "Common": {
+    "foundation": "Fundación",
+    "encryption": "Encriptación",
+    "infrastructure": "Infraestructura",
+    "operations": "Operaciones",
+    "visibility": "Visibilidad",
+    "networkLayer": "Capa de Red",
+    "version": "Versión",
+    "updated": "Actualizado",
+    "section": "Sección",
+    "latency": "Latencia de Red",
+    "riskManagement": "Gestión de Riesgos",
+    "corporateSupport": "Soporte Corporativo",
+    "documentation": "Documentación"
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "La ruta logística que buscas no existe o ha sido movida.",
+    "backToHome": "Volver al Origen"
+  },
+  "ErrorBoundary": {
+    "title": "¡Algo salió mal!",
+    "description": "Encontramos un error inesperado. Por favor, inténtalo de nuevo o contacta a soporte si el problema persiste.",
+    "retry": "Intentar de nuevo"
+  },
+  "ContactPage": {
+    "header": "El Concierge",
+    "subtitle": "Atención especializada para una red global.",
+    "form": {
+      "name": "Nombre completo",
+      "email": "Correo corporativo",
+      "category": "Categoría",
+      "categories": {
+        "shipment": "Consulta de Envío",
+        "partnership": "Alianza Comercial",
+        "press": "Prensa y Medios",
+        "other": "Otros"
+      },
+      "message": "Mensaje",
+      "submit": "Enviar Solicitud"
+    },
+    "hubs": {
+      "title": "Nuestros Nodos",
+      "nyc": "Nueva York",
+      "ldn": "Londres",
+      "sin": "Singapur",
+      "spo": "São Paulo"
+    }
+  },
+  "SupportPage": {
+    "header": "Centro de Comando",
+    "subtitle": "Soporte técnico y asistencia operativa 24/7.",
+    "docPrefix": "Referencia de API v2.4.",
+    "status": {
+      "online": "Todos los sistemas operativos",
+      "latency": "Latencia Global: 14ms"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "items": [
+        {
+          "q": "¿Cómo rastreo mi envío?",
+          "a": "Utiliza tu número de referencia HUV en nuestra página de rastreo para obtener visibilidad en tiempo real."
+        },
+        {
+          "q": "¿Qué países cubren?",
+          "a": "Operamos en más de 150 países a través de nuestra red de hubs inteligentes."
+        }
+      ]
+    },
+    "cards": {
+      "security": {
+        "title": "Protocolos de Seguridad",
+        "desc": "Estándares de verificación, encriptación y protección de activos."
+      },
+      "claims": {
+        "title": "Gestión de Reclamaciones",
+        "desc": "Resolución express para discrepancias logísticas."
+      }
+    },
+    "cta": {
+      "title": "¿Aún necesitas autorización?",
+      "p": "Nuestros agentes están listos para resolver cualquier interrupción en la red.",
+      "button": "Iniciar Chat en Vivo"
+    }
+  },
+  "LegalPage": {
+    "header": "Protocolos Legales",
+    "subtitle": "Marco regulatorio y términos de servicio de Huvyn.",
+    "versionNumber": "2026.1.4",
+    "updatedDate": "Oct 12, 2025",
+    "content": "Los siguientes términos rigen el uso de la plataforma Huvyn y nuestra infraestructura logística...",
+    "sections": {
+      "terms": "Términos de Servicio",
+      "logistics": "Protocolo Logístico",
+      "liability": "Marco de Responsabilidad",
+      "compliance": "Cumplimiento Global"
+    },
+    "content_blocks": {
+      "operational_scope": "Alcance Operativo",
+      "operational_desc": "Huvyn Systems AG actúa como una capa de orquestación de software. Al utilizar nuestra red, los agentes aceptan proporcionar datos de telemetría precisos y adherirse a los estándares ambientales dictados por el Protocolo Green-Asset.",
+      "risk_mgmt": "Gestión de Riesgos",
+      "risk_desc": "Los envíos que superen los 250 mil dólares requieren claves de encriptación especializadas para los apretones de manos de los nodos.",
+      "dispute_arch": "Arquitectura de Disputas",
+      "dispute_desc": "Todas las discrepancias deben registrarse a través de la Consola Hub dentro de las 12 horas posteriores a la llegada del paquete.",
+      "liability_limits": "Límites de Responsabilidad",
+      "liability_desc": "La responsabilidad financiera máxima para cualquier ciclo logístico individual está limitada al valor declarado del recibo digital encriptado generado durante el escaneo inicial del hub. Huvyn no se hace responsable de las interrupciones temporales causadas por anomalías atmosféricas."
+    }
+  },
+  "PrivacyPage": {
+    "header": "Privacidad de Datos",
+    "subtitle": "Compromiso con la seguridad y protección de información.",
+    "content": "En Huvyn, la seguridad de tus datos es tan crítica como la seguridad de tus envíos...",
+    "sovereignty": {
+      "title": "Soberanía de Datos",
+      "transparency": "Transparencia",
+      "transparency_p": "Divulgamos todos los socios de cómputo externos involucrados en la optimización de rutas y la deduplicación de paquetes.",
+      "localization": "Localización",
+      "localization_p": "Los datos se almacenan dentro de la jurisdicción del hub de origen para cumplir con las Leyes de Soberanía locales."
+    },
+    "isolation": {
+      "title": "Aislamiento Estricto",
+      "desc": "Los identificadores personales se separan de la telemetría del hub para garantizar el anonimato absoluto durante los ciclos de tránsito."
+    },
+    "audit": {
+      "title": "Auditoría de Extremo a Extremo",
+      "desc": "Todas las solicitudes de datos requieren la autorización de múltiples firmas del controlador del hub y del propietario del activo."
+    },
+    "collection": {
+      "title": "Lógica de Recolección",
+      "desc": "Huvyn solo recopila la telemetría necesaria para la entrega segura de los activos. Esto incluye coordenadas geoespaciales durante el tránsito, marcas de tiempo de llegada al hub y firmas digitales encriptadas. Los datos biométricos nunca se procesan ni se almacenan.",
+      "purge": "Para solicitudes de eliminación de datos, inicie una \"Solicitud de Purga\" a través de la consola Concierge o contacte con nuestro Nodo de Protección de Datos."
+    }
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados.",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "contact": "Contacto",
+    "support": "Soporte",
+    "emailPlaceholder": "Email corporativo",
+    "joinButton": "Unirse al Proxy"
+  }
+}
