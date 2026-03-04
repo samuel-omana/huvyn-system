@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "next build && opennextjs-cloudflare build --dangerously-disable-config-creation",
+    "build:cf": "next build && opennextjs-cloudflare build --dangerously-disable-config-creation && node cloudflare-pages-build.mjs",
     "start": "next start",
     "lint": "eslint"
   },
