@@ -1,0 +1,13 @@
+{
+  "/[locale]/about/page": "/[locale]/about",
+  "/[locale]/contact/page": "/[locale]/contact",
+  "/[locale]/legal/page": "/[locale]/legal",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/privacy/page": "/[locale]/privacy",
+  "/[locale]/services/page": "/[locale]/services",
+  "/[locale]/support/page": "/[locale]/support",
+  "/[locale]/tracking/page": "/[locale]/tracking",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico"
+}

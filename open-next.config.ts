@@ -1,15 +1,26 @@
-import type { OpenNextConfig } from 'opennextjs-cloudflare';
+import type { OpenNextConfig } from '@opennextjs/cloudflare';
 
 const config: OpenNextConfig = {
 	default: {
 		override: {
-			wrapper: 'cloudflare-node', // Use Cloudflare Node.js compatibility layer
+			wrapper: 'cloudflare-node',
+			converter: 'edge',
+			proxyExternalRequest: 'fetch',
+			incrementalCache: 'dummy',
+			tagCache: 'dummy',
+			queue: 'dummy',
 		},
 	},
+	edgeExternals: ['node:crypto'],
 	middleware: {
-		external: true, // Run middleware on Edge
+		external: true,
 		override: {
 			wrapper: 'cloudflare-edge',
+			converter: 'edge',
+			proxyExternalRequest: 'fetch',
+			incrementalCache: 'dummy',
+			tagCache: 'dummy',
+			queue: 'dummy',
 		},
 	},
 };
