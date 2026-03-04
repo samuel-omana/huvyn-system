@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cf": "next build && opennextjs-cloudflare",
     "start": "next start",
     "lint": "eslint"
   },
@@ -18,14 +19,13 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.16",
+    "@opennextjs/cloudflare": "^1.17.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "eslint-plugin-next-on-pages": "^1.13.16",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
