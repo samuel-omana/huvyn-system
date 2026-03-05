@@ -76,10 +76,8 @@ export function Footer() {
                 <div className="mt-16 pt-8 border-t border-black/[0.03] flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
                     <p>© {currentYear} HUVYN SYSTEMS AG. {tf('rights')}</p>
                     <div className="flex gap-6">
-                        <span className="hover:text-zinc-950 transition-colors cursor-default">{th('nyc')}</span>
-                        <span className="hover:text-zinc-950 transition-colors cursor-default">{th('ldn')}</span>
-                        <span className="hover:text-zinc-950 transition-colors cursor-default">{th('sin')}</span>
-                        <span className="hover:text-zinc-950 transition-colors cursor-default">{th('spo')}</span>
+                        <span className="hover:text-zinc-950 transition-colors cursor-default">{th('bcn')}</span>
+                        <span className="hover:text-zinc-950 transition-colors cursor-default">{th('mad')}</span>
                     </div>
                 </div>
             </div>

@@ -69,7 +69,7 @@ export default function TrackingPage() {
                 >
                     <div className="bg-zinc-950 rounded-full p-1.5 flex items-center shadow-2xl shadow-black/20">
                         <div className="flex items-center gap-2.5 pl-5 pr-3 border-r border-white/10 text-white/40 text-[10px] font-bold tracking-widest uppercase">
-                            <span className="text-blue-500">REF</span>
+                            <span className="text-blue-500">{t('refLabel')}</span>
                         </div>
                         <input
                             type="text"
@@ -126,7 +126,7 @@ export default function TrackingPage() {
                                 </motion.div>
 
                                 <motion.div variants={fadeInUp} className="bg-white rounded-[--radius-extreme] p-8 border border-black/[0.03] shadow-lg shadow-black/[0.01]">
-                                    <h3 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#666666] mb-6 opacity-50">Scanning Audit</h3>
+                                    <h3 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#666666] mb-6 opacity-50">{t('scanningAudit')}</h3>
                                     <motion.div
                                         variants={{
                                             visible: {
@@ -209,7 +209,7 @@ export default function TrackingPage() {
                                     <div className="absolute bottom-10 right-10 flex gap-4">
                                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.5 }} className="bg-white p-6 rounded-3xl flex items-center gap-4 shadow-2xl">
                                             <div className="flex flex-col">
-                                                <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">Velocity</span>
+                                                <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest">{t('velocityLabel')}</span>
                                                 <span className="text-2xl font-black text-zinc-950 tracking-tighter">{t('velocity')}</span>
                                             </div>
                                         </motion.div>

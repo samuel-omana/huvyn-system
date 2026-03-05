@@ -3,10 +3,30 @@
 import { useTranslations } from 'next-intl';
 import { motion, Variants } from 'framer-motion';
 import { ShieldAlert, Scale, FileText } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function LegalPage() {
     const t = useTranslations('LegalPage');
     const tc = useTranslations('Common');
+    const [activeSection, setActiveSection] = useState('terms');
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: '-20% 0px -80% 0px' }
+        );
+
+        const elements = document.querySelectorAll('h2[id], h3[id], div[id="risk-mgmt"]');
+        elements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
 
     const fadeInUp: Variants = {
         initial: { opacity: 0, y: 20 },
@@ -54,10 +74,10 @@ export default function LegalPage() {
                         <div className="space-y-6">
                             <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">{tc('section')}</h3>
                             <nav className="flex flex-col gap-4 text-sm font-bold text-zinc-500">
-                                <a href="#terms" className="text-zinc-950 border-l-2 border-zinc-950 pl-4 py-1 hover:text-zinc-950 transition-colors">{t('sections.terms')}</a>
-                                <a href="#logistics" className="pl-4 py-1 hover:text-zinc-950 transition-colors">{t('sections.logistics')}</a>
-                                <a href="#liability" className="pl-4 py-1 hover:text-zinc-950 transition-colors">{t('sections.liability')}</a>
-                                <a href="#compliance" className="pl-4 py-1 hover:text-zinc-950 transition-colors">{t('sections.compliance')}</a>
+                                <a href="#terms" className={`pl-4 py-1 transition-colors ${activeSection === 'terms' ? 'text-zinc-950 border-l-2 border-zinc-950' : 'border-l-2 border-transparent hover:text-zinc-950'}`}>{t('sections.terms')}</a>
+                                <a href="#operational-scope" className={`pl-4 py-1 transition-colors ${activeSection === 'operational-scope' ? 'text-zinc-950 border-l-2 border-zinc-950' : 'border-l-2 border-transparent hover:text-zinc-950'}`}>{t('sections.logistics')}</a>
+                                <a href="#risk-mgmt" className={`pl-4 py-1 transition-colors ${activeSection === 'risk-mgmt' ? 'text-zinc-950 border-l-2 border-zinc-950' : 'border-l-2 border-transparent hover:text-zinc-950'}`}>{t('sections.liability')}</a>
+                                <a href="#compliance" className={`pl-4 py-1 transition-colors ${activeSection === 'compliance' ? 'text-zinc-950 border-l-2 border-zinc-950' : 'border-l-2 border-transparent hover:text-zinc-950'}`}>{t('sections.compliance')}</a>
                             </nav>
                         </div>
 
@@ -82,12 +102,17 @@ export default function LegalPage() {
 
                             <div className="my-16 h-px bg-black/[0.05] w-full" />
 
-                            <h3 className="text-2xl font-bold text-zinc-950">{t('content_blocks.operational_scope')}</h3>
+                            <h3 id="operational-scope" className="text-2xl font-bold text-zinc-950 scroll-mt-32">{t('sections.logistics')}</h3>
                             <p className="text-zinc-500 font-medium leading-[1.8] mt-6">
                                 {t('content_blocks.operational_desc')}
                             </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+                            <h4 className="text-xl font-bold text-zinc-950 mt-10">{t('content_blocks.acceptable_use')}</h4>
+                            <p className="text-zinc-500 font-medium leading-[1.8] mt-4">
+                                {t('content_blocks.acceptable_use_desc')}
+                            </p>
+
+                            <div id="risk-mgmt" className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 scroll-mt-32">
                                 <div className="bg-zinc-50 p-8 rounded-3xl border border-black/[0.02]">
                                     <ShieldAlert className="w-8 h-8 text-zinc-400 mb-6" />
                                     <h4 className="font-bold text-zinc-950 mb-4">{t('content_blocks.risk_mgmt')}</h4>
@@ -100,9 +125,19 @@ export default function LegalPage() {
                                 </div>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-zinc-950 mt-16">{t('content_blocks.liability_limits')}</h3>
+                            <h3 id="risk-mgmt" className="text-2xl font-bold text-zinc-950 mt-16 scroll-mt-32">{t('sections.liability')}</h3>
                             <p className="text-zinc-500 font-medium leading-[1.8] mt-6">
                                 {t('content_blocks.liability_desc')}
+                            </p>
+
+                            <h4 className="text-xl font-bold text-zinc-950 mt-10">{t('content_blocks.force_majeure')}</h4>
+                            <p className="text-zinc-500 font-medium leading-[1.8] mt-4">
+                                {t('content_blocks.force_majeure_desc')}
+                            </p>
+
+                            <h3 id="compliance" className="text-2xl font-bold text-zinc-950 mt-16 scroll-mt-32">{t('sections.compliance')}</h3>
+                            <p className="text-zinc-500 font-medium leading-[1.8] mt-6">
+                                {t('content_blocks.global_compliance_desc')}
                             </p>
                         </div>
                     </motion.div>

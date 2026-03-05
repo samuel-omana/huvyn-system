@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect, useState, ChangeEvent } from 'react';
-import { Globe, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Globe, Menu, X, ArrowUpRight, User } from 'lucide-react';
 
 export function Navbar() {
     const t = useTranslations('Navigation');
@@ -75,7 +75,7 @@ export function Navbar() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`${isActive ? 'nav-item-active' : 'px-4 py-2 hover:text-white transition-colors studio-hover'}`}
+                                    className={`${isActive ? 'nav-item-active pointer-events-none' : 'px-4 py-2 hover:text-white transition-colors studio-hover'}`}
                                 >
                                     {item.label}
                                 </Link>
@@ -84,7 +84,15 @@ export function Navbar() {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <div className="relative group">
+                        <Link
+                            href="/auth"
+                            className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-all border border-white/5 shadow-sm group"
+                        >
+                            <User className="w-3.5 h-3.5" />
+                            <span className="text-[10px] font-bold uppercase tracking-wider">{t('login')}</span>
+                        </Link>
+
+                        <div className="hidden md:block relative group">
                             <button className="p-2 hover:text-white transition-colors">
                                 <Globe className="w-4 h-4" />
                             </button>
@@ -120,20 +128,65 @@ export function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-0 z-[60] bg-zinc-950 p-8 pt-24 md:hidden"
+                        className="fixed inset-0 z-[60] bg-zinc-950 p-8 pt-24 flex flex-col md:hidden"
                     >
-                        <div className="flex flex-col gap-8">
-                            {navItems.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-4xl font-semibold tracking-tighter text-white/40 hover:text-white transition-colors flex items-center justify-between group"
-                                >
-                                    {item.label}
-                                    <ArrowUpRight className="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </Link>
-                            ))}
+                        <button
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="absolute top-6 right-6 p-2 text-white/50 hover:text-white transition-colors"
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+                        <div className="flex flex-col gap-8 flex-1">
+                            <Link
+                                href="/auth"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between group overflow-hidden relative"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="flex items-center gap-4 relative z-10">
+                                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                                        <User className="w-5 h-5 text-zinc-950" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-xl font-bold text-white tracking-tight">{t('login')}</span>
+                                        <span className="text-xs text-white/40 font-bold uppercase tracking-widest">{t('arch')}</span>
+                                    </div>
+                                </div>
+                                <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-white transition-colors relative z-10" />
+                            </Link>
+
+                            <div className="flex flex-col gap-6 mt-4">
+                                {navItems.map((item) => {
+                                    const isActive = pathname === `/${locale}${item.href}` || (item.href === '/' && pathname === `/${locale}`);
+                                    return (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                            className={`text-4xl font-semibold tracking-tighter flex items-center justify-between group transition-colors ${isActive ? 'text-white pointer-events-none' : 'text-white/40 hover:text-white'}`}
+                                        >
+                                            {item.label}
+                                            <ArrowUpRight className={`w-8 h-8 transition-opacity ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+                                        </Link>
+                                    )
+                                })}
+                            </div>
+
+                            <div className="mt-8 border-t border-white/10 pt-8 flex gap-4 w-full">
+                                {['en', 'es', 'pt', 'fr'].map((lang) => (
+                                    <button
+                                        key={lang}
+                                        onClick={() => {
+                                            const pathSegments = window.location.pathname.split('/');
+                                            pathSegments[1] = lang;
+                                            window.location.href = pathSegments.join('/') + window.location.search;
+                                        }}
+                                        className={`flex-1 px-4 py-3 rounded-xl text-xs font-bold uppercase transition-colors text-center ${locale === lang ? 'bg-white text-zinc-900 border border-white' : 'bg-transparent text-white/40 border border-white/20'}`}
+                                    >
+                                        {lang}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </motion.div>
                 )}

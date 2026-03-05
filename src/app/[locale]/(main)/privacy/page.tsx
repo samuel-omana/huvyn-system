@@ -66,8 +66,7 @@ export default function PrivacyPage() {
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.1 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:col-span-8"
                     >
@@ -108,7 +107,7 @@ export default function PrivacyPage() {
                             </p>
 
                             <p className="text-zinc-500 font-bold leading-[1.8] mt-10 p-8 bg-zinc-50 rounded-3xl border border-black/[0.02] text-sm italic">
-                                {t('collection.purge')}
+                                {t('sovereignty.purge')}
                             </p>
                         </div>
                     </motion.div>

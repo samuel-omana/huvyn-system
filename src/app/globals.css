@@ -6,6 +6,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), serif;
 
   --radius-extreme: 2rem;
   /* Reduced from 2.5rem for more precision */

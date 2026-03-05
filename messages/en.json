@@ -31,12 +31,8 @@
         "socialProof": {
             "title": "Trusted by global innovators:",
             "logos": [
-                "ACME",
-                "GLOBEX",
-                "SOYLENT",
-                "INITECH",
-                "UMBRELLA",
-                "HUVYN NETWORK"
+                "Barcelona",
+                "Madrid"
             ]
         },
         "metrics": {
@@ -98,7 +94,10 @@
             "currentLocation": "Current Location",
             "waiting": "Waiting for shipment encryption key to initialize dashboard",
             "tomorrow": "Tomorrow"
-        }
+        },
+        "refLabel": "REF",
+        "scanningAudit": "Scanning Audit",
+        "velocityLabel": "Velocity"
     },
     "ServicesPage": {
         "header": "Enterprise Solutions",
@@ -161,7 +160,8 @@
         "services": "Services",
         "about": "About Us",
         "arch": "Architecture",
-        "tagline": "The intelligence layer for atom orchestration. Moving atoms with bit-level precision."
+        "tagline": "The intelligence layer for atom orchestration. Moving atoms with bit-level precision.",
+        "login": "Log In"
     },
     "Common": {
         "foundation": "Foundation",
@@ -176,7 +176,8 @@
         "latency": "Network Latency",
         "riskManagement": "Risk Management",
         "corporateSupport": "Corporate Support",
-        "documentation": "Documentation"
+        "documentation": "Documentation",
+        "loading": "Loading"
     },
     "NotFound": {
         "title": "Page Not Found",
@@ -206,10 +207,8 @@
         },
         "hubs": {
             "title": "Our Nodes",
-            "nyc": "New York",
-            "ldn": "London",
-            "sin": "Singapore",
-            "spo": "São Paulo"
+            "bcn": "Barcelona",
+            "mad": "Madrid"
         }
     },
     "SupportPage": {
@@ -263,38 +262,43 @@
         },
         "content_blocks": {
             "operational_scope": "Operational Scope",
-            "operational_desc": "Huvyn Systems AG acts as a software orchestration layer. By utilizing our network, agents agree to provide accurate telemetry data and adhere to the environmental standards dictated by the Green-Asset Protocol.",
-            "risk_mgmt": "Risk Management",
-            "risk_desc": "Shipments exceeding $250k require specialized encryption keys for node handshakes.",
+            "operational_desc": "Huvyn Systems AG operates exclusively as a B2B intelligence and orchestration layer for global shipping networks. We do not act as a common carrier, freight forwarder, or customs broker. By connecting to our Proxy Network, corporate entities agree to maintain a minimum SLA of 99.9% uptime on their API endpoints and provide accurate telemetry data. Failure to meet these technical requirements may result in automated throttling of your algorithmic route prioritization.",
+            "acceptable_use": "Acceptable Use Policy",
+            "acceptable_use_desc": "The Huvyn network is designed for enterprise-grade logistics. The transmission of illicit goods, undeclared hazardous materials, or mathematically impossible routing requests is strictly prohibited. Our heuristic engines scan all requests; anomalies are flagged and reported to corresponding international authorities automatically.",
+            "risk_mgmt": "Risk Management & Security",
+            "risk_desc": "Shipments with a declared value exceeding $250,000 USD require Class-A cryptographic handshakes at every hub node. Agents must ensure that all physical assets have matching digital twins in the Huvyn registry prior to dispatch.",
             "dispute_arch": "Dispute Architecture",
-            "dispute_desc": "All discrepancies must be logged via the Hub Console within 12 hours of packet arrival.",
+            "dispute_desc": "All logistical discrepancies, including predictive ETA failures exceeding a 45-minute threshold, must be logged via the Hub Console within 12 hours of the packet's final hub arrival. Disputes filed outside this temporal window are automatically invalidated by our smart contracts.",
             "liability_limits": "Liability Limits",
-            "liability_desc": "The maximum financial liability for any single logistical cycle is capped at the declared value of the encrypted digital receipt generated during initial hub scanning. Huvyn is not liable for temporal disruptions caused by atmospheric anomalies."
+            "liability_desc": "Our financial liability for any single logistical cycle is strictly capped at the declared value encoded in the encrypted digital receipt generated during initial hub scanning, or $100,000 USD, whichever is lower. Huvyn Systems AG explicitly disclaims liability for indirect, punitive, or consequential damages arising from network downtime or API deprecation.",
+            "force_majeure": "Force Majeure",
+            "force_majeure_desc": "We are not liable for routing failures or delays caused by circumstances beyond the predictive capabilities of our algorithms. This includes, but is not limited to, atmospheric anomalies, geopolitical sanctions, solar flares affecting satellite arrays, or localized internet infrastructure collapses.",
+            "global_compliance_desc": "We operate in strict adherence to international trade laws. Our data residency protocols comply with the GDPR (EU), CCPA (California), and LGPD (Brazil). Furthermore, all routing optimizations are bound by the Universal Postal Union (UPU) guidelines for cross-border logistics and the Green-Asset Protocol for carbon emission capping."
         }
     },
     "PrivacyPage": {
         "header": "Data Privacy",
-        "subtitle": "Commitment to information security and protection.",
-        "content": "At Huvyn, the security of your data is as critical as the security of your shipments...",
+        "subtitle": "Uncompromising commitment to information security and protection.",
+        "content": "At Huvyn, the security of your corporate data is treated with the same uncompromising rigor as the physical safeguarding of your highest-value shipments. We do not monetize data; our intelligence layer exists solely to orchestrate the movement of atoms. This document outlines the cryptographic and operational boundaries that shield your network telemetry.",
         "sovereignty": {
-            "title": "Data Sovereignty",
-            "transparency": "Transparency",
-            "transparency_p": "We disclose all third-party compute partners involved in route optimization and packet deduplication.",
-            "localization": "Localization",
-            "localization_p": "Data is stored within the jurisdiction of the origin hub to comply with local Sovereignty Acts."
+            "title": "Data Sovereignty & Legal Jurisdiction",
+            "transparency": "Algorithmic Transparency",
+            "transparency_p": "We operate a zero-black-box policy. All mathematical models, third-party neural-compute partners involved in route optimization, and packet deduplication layers are fully disclosed within the Hub Operations Console.",
+            "localization": "Hardware Localization",
+            "localization_p": "Telemetry data at rest is isolated and strictly stored within the sovereign jurisdiction of the origin hub, structurally complying with the GDPR (EU), LGPD (Brazil), CCPA (California), and local state-level cyber frameworks.",
+            "purge": "Right to Erasure (Purge Engine): Clients can programmatically initialize a Level-3 Purge Request via the Concierge console API. This action triggers an irreversible hardware-level wipe of all associated transit histories within 72 microseconds across our decentralized storage pods."
         },
         "isolation": {
-            "title": "Strict Isolation",
-            "desc": "Personal identifiers are decoupled from hub telemetry to ensure absolute anonymity during transit cycles."
+            "title": "Strict Telemetry Isolation",
+            "desc": "All personally identifiable information (PII) is structurally decoupled from active hub telemetry. Route data is tokenized using asymmetric 256-bit encryption before transmission to the prediction engine, ensuring absolute anonymity during global transit cycles even if intercepted."
         },
         "audit": {
-            "title": "End-to-End Audit",
-            "desc": "All data requests require multi-signature authorization from the hub controller and asset owner."
+            "title": "Immutable End-to-End Audit Logs",
+            "desc": "Accessing historical shipment parameters outside standard API scopes requires synchronized, multi-signature cryptographic authorization from the origin hub controller, the destination node, and the asset owner. All digital handshakes are appended to an immutable, append-only ledger."
         },
         "collection": {
-            "title": "Collection Logic",
-            "desc": "Huvyn only collects telemetry required for safe asset delivery. This includes geospatial coordinates during transit, hub arrival timestamps, and encrypted digital signatures. Biometric data is never processed or stored.",
-            "purge": "For data deletion requests, please initialize a \"Purge Request\" via the Concierge console or contact our Data Protection Node."
+            "title": "Deterministic Collection Logic",
+            "desc": "Huvyn strictly limits data ingestion to parameters mathematically required for safe asset delivery and algorithmic precision. This is restricted to: anonymized geospatial coordinates during active transit phases, cryptographically signed hub arrival/departure timestamps, and environmental sensory data (temperature/humidity variance). Biometric data, driver identities, and granular cargo contents are never processed by the core orchestration layer."
         }
     },
     "Footer": {
@@ -305,5 +309,47 @@
         "support": "Support",
         "emailPlaceholder": "Corporate email",
         "joinButton": "Join Proxy"
+    },
+    "AuthPage": {
+        "title": "Huvyn | Access Portal",
+        "hero_title": "The intelligence layer for atom orchestration",
+        "hero_subtitle": "Unlock the power of intelligent routing through interactive logistics projects. Learn the core operational skills behind supply chain optimization, natural node processing, and smart delivery experiences.",
+        "hero_logo": "HUVYN AURA",
+        "login": {
+            "title": "Welcome Back",
+            "subtitle": "Log in to orchestrate your global shipments.",
+            "submit": "Log In",
+            "to_register": "Don't have an account? Sign Up",
+            "forgot_pw": "Forgot your password?",
+            "or": "or",
+            "social_google": "Continue with Google",
+            "social_microsoft": "Continue with Microsoft"
+        },
+        "register": {
+            "title": "Create an Account",
+            "subtitle": "You are a few moments away from getting started!",
+            "newsletter": "Send me tips, updates and offers",
+            "submit": "Sign up",
+            "agreement": "By signing up, you accept Huvyn's ",
+            "agreement_link1": "privacy policy",
+            "agreement_and": " and ",
+            "agreement_link2": "terms of service",
+            "to_login": "Already have an account? Log In"
+        },
+        "recover": {
+            "title": "Reset Password",
+            "subtitle": "Enter your corporate email to receive a secure recovery link.",
+            "submit": "Send Reset Link",
+            "to_login": "Back to Log In"
+        },
+        "back": "Back",
+        "fields": {
+            "name": "Full Name",
+            "name_ph": "Enter your full name",
+            "email": "Email",
+            "email_ph": "Enter your email",
+            "password": "Password",
+            "password_ph": "••••••••"
+        }
     }
 }

@@ -11,10 +11,8 @@ export default function ContactPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const hubs = [
-        { id: 'nyc', coords: '40.7128° N, 74.0060° W' },
-        { id: 'ldn', coords: '51.5074° N, 0.1278° W' },
-        { id: 'sin', coords: '1.3521° N, 103.8198° E' },
-        { id: 'spo', coords: '23.5505° S, 46.6333° W' }
+        { id: 'bcn', coords: '41.3851° N, 2.1734° E' },
+        { id: 'mad', coords: '40.4168° N, 3.7038° W' }
     ];
 
     const handleSubmit = (e: React.FormEvent) => {

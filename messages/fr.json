@@ -31,12 +31,8 @@
         "socialProof": {
             "title": "Créé par des entreprises innovantes mondiales:",
             "logos": [
-                "ACME",
-                "GLOBEX",
-                "SOYLENT",
-                "INITECH",
-                "UMBRELLA",
-                "HUVYN NETWORK"
+                "Barcelona",
+                "Madrid"
             ]
         },
         "metrics": {
@@ -98,7 +94,10 @@
             "currentLocation": "Emplacement Actuel",
             "waiting": "En attente de la clé de chiffrement de l'expédition pour initialiser le tableau de bord",
             "tomorrow": "Demain"
-        }
+        },
+        "refLabel": "RÉF",
+        "scanningAudit": "Audit de Numérisation",
+        "velocityLabel": "Vitesse"
     },
     "ServicesPage": {
         "header": "Solutions d'Entreprise",
@@ -161,7 +160,8 @@
         "services": "Services",
         "about": "À Propos",
         "arch": "Architecture",
-        "tagline": "La couche d'intelligence pour l'orchestration des atomes. Déplacer des atomes avec une précision au niveau du bit."
+        "tagline": "La couche d'intelligence pour l'orchestration des atomes. Déplacer des atomes avec une précision au niveau du bit.",
+        "login": "Se Connecter"
     },
     "Common": {
         "foundation": "Fondation",
@@ -176,7 +176,8 @@
         "latency": "Latence Réseau",
         "riskManagement": "Gestion des Risques",
         "corporateSupport": "Soutien aux Entreprises",
-        "documentation": "Documentation"
+        "documentation": "Documentation",
+        "loading": "Chargement"
     },
     "NotFound": {
         "title": "Page Non Trouvée",
@@ -206,10 +207,8 @@
         },
         "hubs": {
             "title": "Nos Noeuds",
-            "nyc": "New York",
-            "ldn": "Londres",
-            "sin": "Singapour",
-            "spo": "São Paulo"
+            "bcn": "Barcelone",
+            "mad": "Madrid"
         }
     },
     "SupportPage": {
@@ -263,38 +262,43 @@
         },
         "content_blocks": {
             "operational_scope": "Portée Opérationnelle",
-            "operational_desc": "Huvyn Systems AG agit en tant que couche d'orchestration logicielle. En utilisant notre réseau, les agents acceptent de fournir des données de télémétrie précises et de respecter les normes environnementales dictées par le protocole Green-Asset.",
-            "risk_mgmt": "Gestion des Risques",
-            "risk_desc": "Les expéditions dépassant 250 000 $ nécessitent des clés de cryptage spécialisées pour les handshakes des nœuds.",
+            "operational_desc": "Huvyn Systems AG opère exclusivement comme une couche d'orchestration et d'intelligence B2B pour les réseaux d'expédition mondiaux. Nous n'agissons pas en tant que transporteur public, transitaire ou courtier en douane. En se connectant à notre réseau Proxy, les entités corporatives s'engagent à maintenir un SLA minimum de 99,9% de disponibilité sur leurs points de terminaison API et à fournir des données de télémétrie précises. Le non-respect de ces exigences techniques peut entraîner une limitation automatique de leur priorisation d'itinéraire algorithmique.",
+            "acceptable_use": "Politique d'Utilisation Acceptable",
+            "acceptable_use_desc": "Le réseau Huvyn est conçu pour la logistique d'entreprise. La transmission de biens illicites, de matières dangereuses non déclarées ou de demandes d'itinéraire mathématiquement impossibles est strictement interdite. Nos moteurs heuristiques analysent toutes les requêtes ; les anomalies sont signalées et automatiquement transmises aux autorités internationales correspondantes.",
+            "risk_mgmt": "Gestion des Risques & Sécurité",
+            "risk_desc": "Les expéditions d'une valeur déclarée supérieure à 250 000 USD nécessitent des poignées de main cryptographiques de classe A à chaque nœud du hub. Les agents doivent s'assurer que tous les actifs physiques ont des jumeaux numériques correspondants dans le registre Huvyn avant l'expédition.",
             "dispute_arch": "Architecture des Litiges",
-            "dispute_desc": "Toutes les divergences doivent être enregistrées via la console Hub dans les 12 heures suivant l'arrivée du paquet.",
+            "dispute_desc": "Toutes les divergences logistiques, y compris les échecs prédictifs de l'heure d'arrivée estimée (ETA) dépassant un seuil de 45 minutes, doivent être enregistrées via la Hub Console dans les 12 heures suivant l'arrivée finale du paquet au hub. Les litiges déposés en dehors de cette fenêtre temporelle sont automatiquement invalidés par nos contrats intelligents.",
             "liability_limits": "Limites de Responsabilité",
-            "liability_desc": "La responsabilité financière maximale pour tout cycle logistique unique est plafonnée à la valeur déclarée du reçu numérique crypté généré lors de la numérisation initiale du concentrateur. Huvyn n'est pas responsable des perturbations temporelles causées par des anomalies atmosphériques."
+            "liability_desc": "Notre responsabilité financière pour un cycle logistique unique est strictement plafonnée à la valeur déclarée encodée dans le reçu numérique crypté généré lors de la numérisation initiale du hub, ou à 100 000 USD, le montant le plus bas étant retenu. Huvyn Systems AG décline explicitement toute responsabilité pour les dommages indirects, punitifs ou consécutifs résultant des temps d'arrêt du réseau ou de l'obsolescence de l'API.",
+            "force_majeure": "Force Majeure",
+            "force_majeure_desc": "Nous ne sommes pas responsables des échecs d'itinéraire ou des retards causés par des circonstances dépassant les capacités prédictives de nos algorithmes. Cela inclut, sans s'y limiter, les anomalies atmosphériques, les sanctions géopolitiques, les éruptions solaires affectant les réseaux de satellites ou les effondrements d'infrastructures Internet localisées.",
+            "global_compliance_desc": "Nous opérons dans le strict respect des lois du commerce international. Nos protocoles de résidence des données sont conformes au RGPD (UE), au CCPA (Californie) et à la LGPD (Brésil). De plus, toutes les optimisations d'itinéraires sont encadrées par les directives de l'Union Postale Universelle (UPU) pour la logistique transfrontalière et le protocole Green-Asset pour le plafonnement des émissions de carbone."
         }
     },
     "PrivacyPage": {
         "header": "Confidentialité des Données",
-        "subtitle": "Engagement envers la sécurité et la protection des informations.",
-        "content": "Chez Huvyn, la sécurité de vos données est aussi critique que la sécurité de vos livraisons...",
+        "subtitle": "Engagement sans compromis envers la sécurité et la protection des informations.",
+        "content": "Chez Huvyn, la sécurité de vos données d'entreprise est traitée avec la même rigueur inébranlable que la protection physique de vos expéditions de la plus haute valeur. Nous ne monétisons pas les données ; notre couche d'intelligence existe uniquement pour orchestrer le mouvement des atomes. Ce document décrit les limites cryptographiques et opérationnelles qui protègent la télémétrie de votre réseau.",
         "sovereignty": {
-            "title": "Souveraineté des Données",
-            "transparency": "Transparence",
-            "transparency_p": "Nous divulguons tous les partenaires de calcul tiers impliqués dans l'optimisation des itinéraires et la déduplication des paquets.",
-            "localization": "Localisation",
-            "localization_p": "Les données sont stockées dans la juridiction du hub d'origine pour se conformer aux lois locales sur la souveraineté.",
-            "purge": "Pour les demandes de suppression de données, veuillez initialiser une « Demande de Purge » via la console Concierge ou contactez notre Nœud de Protection des Données."
+            "title": "Souveraineté des Données et Juridiction Légale",
+            "transparency": "Transparence Algorithmique",
+            "transparency_p": "Nous appliquons une politique de zéro boîte noire. Tous les modèles mathématiques, les partenaires de calcul neuronal tiers impliqués dans l'optimisation des itinéraires et les couches de déduplication des paquets sont entièrement divulgués dans la console Hub Operations.",
+            "localization": "Localisation du Matériel",
+            "localization_p": "Les données de télémétrie au repos sont isolées et strictement stockées dans la juridiction souveraine du hub d'origine, conformément au RGPD (UE), LGPD (Brésil), CCPA (Californie) et aux cadres cybernétiques locaux au niveau de l'État.",
+            "purge": "Droit à l'Oubli (Moteur de Purge) : Les clients peuvent initialiser programmatiquement une demande de purge de niveau 3 via l'API de la console Concierge. Cette action déclenche un effacement irréversible au niveau matériel de tous les historiques de transit associés en 72 microsecondes sur nos modules de stockage décentralisés."
         },
         "isolation": {
-            "title": "Isolation Stricte",
-            "desc": "Les identifiants personnels sont dissociés de la télémétrie du hub pour garantir un anonymat absolu pendant les cycles de transit."
+            "title": "Isolation Stricte de la Télémétrie",
+            "desc": "Toutes les informations personnellement identifiables (PII) sont structurellement dissociées de la télémétrie du hub actif. Les données d'itinéraire sont symbolisées à l'aide d'un cryptage asymétrique de 256 bits avant d'être transmises au moteur de prédiction, garantissant un anonymat absolu pendant les cycles de transit mondiaux, même en cas d'interception."
         },
         "audit": {
-            "title": "Audit de Bout en Bout",
-            "desc": "Toutes les demandes de données nécessitent une autorisation multi-signature du contrôleur du hub et du propriétaire de l'actif."
+            "title": "Journaux d'Audit Immuables de Bout en Bout",
+            "desc": "L'accès aux paramètres d'expédition historiques en dehors des portées standard de l'API nécessite une autorisation cryptographique multi-signatures synchronisée du contrôleur du hub d'origine, du nœud de destination et du propriétaire de l'actif. Tous les handshakes numériques sont ajoutés à un grand livre immuable et uniquement en ajout."
         },
         "collection": {
-            "title": "Logique de Collecte",
-            "desc": "Huvyn ne collecte que la télémétrie requise pour la livraison sécurisée des actifs. Cela inclut les coordonnées géospatiales pendant le transit, les horodatages d'arrivée au hub et les signatures numériques cryptées. Les données biométriques ne sont jamais traitées ou stockées."
+            "title": "Logique de Collecte Déterministe",
+            "desc": "Huvyn limite strictement l'ingestion de données aux paramètres mathématiquement requis pour la livraison sécurisée des actifs et la précision algorithmique. Cela se limite aux : coordonnées géospatiales anonymisées pendant les phases de transit actif, horodatages d'arrivée/départ du hub signés cryptographiquement et données sensorielles environnementales (variance de température/humidité). Les données biométriques, l'identité des conducteurs et le contenu granulaire de la cargaison ne sont jamais traités par la couche d'orchestration de base."
         }
     },
     "Footer": {
@@ -305,5 +309,46 @@
         "support": "Support",
         "emailPlaceholder": "Email professionnel",
         "joinButton": "Rejoindre le Proxy"
+    },
+    "AuthPage": {
+        "title": "Huvyn | Portail d'Accès",
+        "hero_title": "À un Clic de la Logistique de Qualité Studio",
+        "hero_subtitle": "Débloquez la puissance du routage intelligent grâce à des projets logistiques interactifs. Apprenez les compétences opérationnelles de base derrière l'optimisation de la chaîne d'approvisionnement, le traitement des nœuds naturels et les expériences de livraison intelligentes.",
+        "hero_logo": "HUVYN AURA",
+        "login": {
+            "title": "Bienvenue",
+            "subtitle": "Connectez-vous pour orchestrer vos expéditions mondiales.",
+            "submit": "Se Connecter",
+            "to_register": "Vous n'avez pas de compte ? S'inscrire",
+            "forgot_pw": "Mot de passe oublié ?",
+            "or": "ou",
+            "social_google": "Continuer avec Google",
+            "social_microsoft": "Continuer avec Microsoft"
+        },
+        "register": {
+            "title": "Créer un Compte",
+            "subtitle": "Vous êtes à quelques instants de commencer !",
+            "newsletter": "Envoyez-moi des conseils, des mises à jour et des offres",
+            "submit": "S'inscrire",
+            "agreement": "En vous inscrivant, vous acceptez la ",
+            "agreement_link1": "politique de confidentialité",
+            "agreement_and": " et les ",
+            "agreement_link2": "conditions de service",
+            "to_login": "Vous avez déjà un compte ? Se Connecter"
+        },
+        "recover": {
+            "title": "Réinitialiser",
+            "subtitle": "Entrez votre email professionnel pour recevoir un lien de récupération sécurisé.",
+            "submit": "Envoyer le Lien de Réinitialisation",
+            "to_login": "Retour à la Connexion"
+        },
+        "fields": {
+            "name": "Nom complet",
+            "name_ph": "Entrez votre nom complet",
+            "email": "Email Professionnel",
+            "email_ph": "Entrez votre email",
+            "password": "Mot de passe",
+            "password_ph": "••••••••"
+        }
     }
 }

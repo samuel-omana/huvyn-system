@@ -19,7 +19,7 @@ export function SocialProof() {
                         <motion.span
                             key={logo}
                             initial={{ opacity: 0, x: 10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
                             className="text-xl font-black tracking-tighter"
                         >

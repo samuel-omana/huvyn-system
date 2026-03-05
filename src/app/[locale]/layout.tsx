@@ -3,13 +3,14 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./../globals.css";
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
 import { BottomBlur } from '@/components/ui/BottomBlur';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
 export const viewport: Viewport = {
   themeColor: [
@@ -46,7 +47,8 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as any)) {
+  const isValidLocale = routing.locales.includes(locale as (typeof routing.locales)[number]);
+  if (!isValidLocale) {
     notFound();
   }
 
@@ -56,14 +58,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans bg-background text-foreground antialiased flex flex-col min-h-screen`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans bg-background text-foreground antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <Navbar />
-          <div className="flex-1 pt-16">
-            {children}
-          </div>
-          <BottomBlur />
-          <Footer />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

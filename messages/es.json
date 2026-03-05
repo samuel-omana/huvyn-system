@@ -31,12 +31,8 @@
     "socialProof": {
       "title": "Confiado por innovadores globales:",
       "logos": [
-        "ACME",
-        "GLOBEX",
-        "SOYLENT",
-        "INITECH",
-        "UMBRELLA",
-        "HUVYN NETWORK"
+        "Barcelona",
+        "Madrid"
       ]
     },
     "metrics": {
@@ -98,7 +94,10 @@
       "currentLocation": "Ubicación Actual",
       "waiting": "Esperando clave de encriptación del envío para inicializar el tablero",
       "tomorrow": "Mañana"
-    }
+    },
+    "refLabel": "REF",
+    "scanningAudit": "Auditoría de Escaneo",
+    "velocityLabel": "Velocidad"
   },
   "ServicesPage": {
     "header": "Soluciones Enterprise",
@@ -161,7 +160,8 @@
     "services": "Servicios",
     "about": "Nosotros",
     "arch": "Arquitectura",
-    "tagline": "La capa de inteligencia para la orquestación de átomos. Moviendo átomos con precisión a nivel de bits."
+    "tagline": "La capa de inteligencia para la orquestación de átomos. Moviendo átomos con precisión a nivel de bits.",
+    "login": "Iniciar Sesión"
   },
   "Common": {
     "foundation": "Fundación",
@@ -176,7 +176,8 @@
     "latency": "Latencia de Red",
     "riskManagement": "Gestión de Riesgos",
     "corporateSupport": "Soporte Corporativo",
-    "documentation": "Documentación"
+    "documentation": "Documentación",
+    "loading": "Cargando"
   },
   "NotFound": {
     "title": "Página no encontrada",
@@ -206,10 +207,8 @@
     },
     "hubs": {
       "title": "Nuestros Nodos",
-      "nyc": "Nueva York",
-      "ldn": "Londres",
-      "sin": "Singapur",
-      "spo": "São Paulo"
+      "bcn": "Barcelona",
+      "mad": "Madrid"
     }
   },
   "SupportPage": {
@@ -263,38 +262,43 @@
     },
     "content_blocks": {
       "operational_scope": "Alcance Operativo",
-      "operational_desc": "Huvyn Systems AG actúa como una capa de orquestación de software. Al utilizar nuestra red, los agentes aceptan proporcionar datos de telemetría precisos y adherirse a los estándares ambientales dictados por el Protocolo Green-Asset.",
-      "risk_mgmt": "Gestión de Riesgos",
-      "risk_desc": "Los envíos que superen los 250 mil dólares requieren claves de encriptación especializadas para los apretones de manos de los nodos.",
+      "operational_desc": "Huvyn Systems AG opera exclusivamente como una capa B2B de inteligencia y orquestación para redes de envío globales. No actuamos como transportistas comunes, transitarios ni agentes de aduanas. Al conectarse a nuestra Red Proxy, las entidades corporativas aceptan mantener un SLA mínimo del 99.9% de tiempo de actividad en sus endpoints de API y proporcionar datos de telemetría precisos. El incumplimiento de estos requisitos técnicos puede resultar en la limitación automática de su priorización algorítmica de rutas.",
+      "acceptable_use": "Política de Uso Aceptable",
+      "acceptable_use_desc": "La red Huvyn está diseñada para logística de grado empresarial. Está estrictamente prohibida la transmisión de bienes ilícitos, materiales peligrosos no declarados o solicitudes de enrutamiento matemáticamente imposibles. Nuestros motores heurísticos escanean todas las solicitudes; las anomalías se marcan y reportan a las autoridades internacionales correspondientes de forma automática.",
+      "risk_mgmt": "Gestión de Riesgos y Seguridad",
+      "risk_desc": "Los envíos con un valor declarado superior a $250,000 USD requieren apretones de manos criptográficos Clase-A en cada nodo del hub. Los agentes deben asegurarse de que todos los activos físicos tengan gemelos digitales correspondientes en el registro de Huvyn antes del despacho.",
       "dispute_arch": "Arquitectura de Disputas",
-      "dispute_desc": "Todas las discrepancias deben registrarse a través de la Consola Hub dentro de las 12 horas posteriores a la llegada del paquete.",
+      "dispute_desc": "Todas las discrepancias logísticas, incluidas las fallas predictivas de ETA que superen el umbral de 45 minutos, deben registrarse a través de la Consola Hub dentro de las 12 horas posteriores a la llegada al hub final del paquete. Las disputas presentadas fuera de esta ventana temporal son invalidadas automáticamente por nuestros contratos inteligentes.",
       "liability_limits": "Límites de Responsabilidad",
-      "liability_desc": "La responsabilidad financiera máxima para cualquier ciclo logístico individual está limitada al valor declarado del recibo digital encriptado generado durante el escaneo inicial del hub. Huvyn no se hace responsable de las interrupciones temporales causadas por anomalías atmosféricas."
+      "liability_desc": "Nuestra responsabilidad financiera para cualquier ciclo logístico individual está estrictamente limitada al valor declarado codificado en el recibo digital encriptado generado durante el escaneo inicial del hub, o a $100,000 USD, lo que sea menor. Huvyn Systems AG renuncia explícitamente a la responsabilidad por daños indirectos, punitivos o consecuentes derivados del tiempo de inactividad de la red o la obsolescencia de nuestras API.",
+      "force_majeure": "Fuerza Mayor",
+      "force_majeure_desc": "No somos responsables de fallas o retrasos en el enrutamiento causados por circunstancias más allá de las capacidades predictivas de nuestros algoritmos. Esto incluye, entre otros, anomalías atmosféricas, sanciones geopolíticas, erupciones solares que afecten a las matrices de satélites o colapsos localizados de la infraestructura de Internet.",
+      "global_compliance_desc": "Operamos en estricto cumplimiento de las leyes de comercio internacional. Nuestros protocolos de residencia de datos cumplen con el RGPD (UE), CCPA (California) y LGPD (Brasil). Además, todas las optimizaciones de rutas están sujetas a las directrices de la Unión Postal Universal (UPU) para la logística transfronteriza y al Protocolo Green-Asset para la limitación de emisiones de carbono."
     }
   },
   "PrivacyPage": {
     "header": "Privacidad de Datos",
-    "subtitle": "Compromiso con la seguridad y protección de información.",
-    "content": "En Huvyn, la seguridad de tus datos es tan crítica como la seguridad de tus envíos...",
+    "subtitle": "Compromiso inquebrantable con la seguridad y protección de la información.",
+    "content": "En Huvyn, la seguridad de sus datos corporativos se trata con el mismo rigor inquebrantable que la protección física de sus envíos de mayor valor. No monetizamos datos; nuestra capa de inteligencia existe únicamente para orquestar el movimiento de átomos. Este documento describe los límites criptográficos y operativos que protegen la telemetría de su red.",
     "sovereignty": {
-      "title": "Soberanía de Datos",
-      "transparency": "Transparencia",
-      "transparency_p": "Divulgamos todos los socios de cómputo externos involucrados en la optimización de rutas y la deduplicación de paquetes.",
-      "localization": "Localización",
-      "localization_p": "Los datos se almacenan dentro de la jurisdicción del hub de origen para cumplir con las Leyes de Soberanía locales."
+      "title": "Soberanía de Datos y Jurisdicción Legal",
+      "transparency": "Transparencia Algorítmica",
+      "transparency_p": "Operamos con una política de cero cajas negras. Todos los modelos matemáticos, socios de cómputo neuronal de terceros involucrados en la optimización de rutas y capas de deduplicación de paquetes se divulgan completamente dentro de la Consola de Operaciones Hub.",
+      "localization": "Localización de Hardware",
+      "localization_p": "Los datos de telemetría en reposo se aíslan y se almacenan estrictamente dentro de la jurisdicción soberana del hub de origen, cumpliendo estructuralmente con el RGPD (UE), LGPD (Brasil), CCPA (California) y los marcos cibernéticos locales a nivel de estado.",
+      "purge": "Derecho al Olvido (Motor de Purga): Los clientes pueden inicializar programáticamente una Solicitud de Purga de Nivel 3 a través de la API de la consola Concierge. Esta acción desencadena un borrado irreversible a nivel de hardware de todos los historiales de tránsito asociados en 72 microsegundos a través de nuestros pods de almacenamiento descentralizados."
     },
     "isolation": {
-      "title": "Aislamiento Estricto",
-      "desc": "Los identificadores personales se separan de la telemetría del hub para garantizar el anonimato absoluto durante los ciclos de tránsito."
+      "title": "Aislamiento Estricto de Telemetría",
+      "desc": "Toda la información de identificación personal (PII) está desacoplada estructuralmente de la telemetría del hub activo. Los datos de la ruta se tokenizan utilizando cifrado asimétrico de 256 bits antes de transmitirse al motor de predicción, asegurando el anonimato absoluto durante ciclos de tránsito global incluso si hay intercepción."
     },
     "audit": {
-      "title": "Auditoría de Extremo a Extremo",
-      "desc": "Todas las solicitudes de datos requieren la autorización de múltiples firmas del controlador del hub y del propietario del activo."
+      "title": "Registros de Auditoría Inmutables de Extremo a Extremo",
+      "desc": "El acceso a los parámetros de envío históricos fuera de los alcances de la API estándar requiere autorización criptográfica multifirma sincronizada del controlador del hub de origen, el nodo de destino y el propietario del activo. Todos los apretones de manos digitales se adjuntan a un libro mayor inmutable."
     },
     "collection": {
-      "title": "Lógica de Recolección",
-      "desc": "Huvyn solo recopila la telemetría necesaria para la entrega segura de los activos. Esto incluye coordenadas geoespaciales durante el tránsito, marcas de tiempo de llegada al hub y firmas digitales encriptadas. Los datos biométricos nunca se procesan ni se almacenan.",
-      "purge": "Para solicitudes de eliminación de datos, inicie una \"Solicitud de Purga\" a través de la consola Concierge o contacte con nuestro Nodo de Protección de Datos."
+      "title": "Lógica de Recolección Determinista",
+      "desc": "Huvyn limita estrictamente la ingesta de datos a los parámetros matemáticamente requeridos para la entrega segura de activos y la precisión predictiva. Esto se restringe a: coordenadas geoespaciales anonimizadas durante el tránsito, marcas de tiempo de llegada/salida criptográficamente firmadas y datos sensoriales ambientales (varianza de temperatura). Nunca extraemos ni leemos datos biométricos ni contenido granular de carga."
     }
   },
   "Footer": {
@@ -305,5 +309,47 @@
     "support": "Soporte",
     "emailPlaceholder": "Email corporativo",
     "joinButton": "Unirse al Proxy"
+  },
+  "AuthPage": {
+    "title": "Huvyn | Portal de Acceso",
+    "hero_title": "La capa de inteligencia para la orquestación de átomos",
+    "hero_subtitle": "Desbloquea el poder del enrutamiento inteligente a través de proyectos logísticos interactivos. Aprende las habilidades operativas centrales detrás de la optimización de la cadena de suministro, el procesamiento natural de nodos y las experiencias de entrega inteligentes.",
+    "hero_logo": "HUVYN AURA",
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión para orquestar tus envíos globales.",
+      "submit": "Iniciar Sesión",
+      "to_register": "¿No tienes una cuenta? Regístrate",
+      "forgot_pw": "¿Olvidaste tu contraseña?",
+      "or": "o",
+      "social_google": "Continuar con Google",
+      "social_microsoft": "Continuar con Microsoft"
+    },
+    "register": {
+      "title": "Crear una Cuenta",
+      "subtitle": "¡Estás a unos momentos de empezar!",
+      "newsletter": "Enviarme consejos, actualizaciones y ofertas",
+      "submit": "Registrarse",
+      "agreement": "Al registrarte, aceptas la ",
+      "agreement_link1": "política de privacidad",
+      "agreement_and": " y los ",
+      "agreement_link2": "términos de servicio",
+      "to_login": "¿Ya tienes una cuenta? Iniciar Sesión"
+    },
+    "recover": {
+      "title": "Recuperar Contraseña",
+      "subtitle": "Ingresa tu correo corporativo para recibir un enlace de recuperación seguro.",
+      "submit": "Enviar Enlace de Reseteo",
+      "to_login": "Volver a Iniciar Sesión"
+    },
+    "back": "Volver",
+    "fields": {
+      "name": "Nombre completo",
+      "name_ph": "Ingresa tu nombre completo",
+      "email": "Correo",
+      "email_ph": "Ingresa tu correo",
+      "password": "Contraseña",
+      "password_ph": "••••••••"
+    }
   }
 }
