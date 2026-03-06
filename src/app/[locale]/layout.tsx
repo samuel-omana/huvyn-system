@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     metadataBase: new URL('https://huvyn.com'),
     title: {
-      template: 'Huvyn — %s',
+      template: 'Huvyn | %s',
       default: 'Huvyn | Movemos tu mundo. Sin fricción.',
     },
     description: t('heroSubtitle'),
