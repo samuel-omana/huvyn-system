@@ -91,17 +91,39 @@ export function Sidebar({ isCollapsed, onCollapse, isMounted }: SidebarProps) {
 
                 {/* BOTTOM UTILITIES */}
                 <div className="p-4 border-t border-zinc-200/50 space-y-2">
-                    {BOTTOM_ITEMS.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            aria-label={item.name}
-                            className={`flex items-center gap-4 px-4 py-3 rounded-xl text-zinc-400 hover:text-zinc-950 hover:bg-zinc-200/50 transition-all group ${isCollapsed ? 'justify-center' : ''}`}
-                        >
-                            <item.icon className="w-5 h-5 transition-colors flex-shrink-0" />
-                            {!isCollapsed && <span className="text-[10px] font-bold uppercase tracking-widest">{item.name}</span>}
-                        </Link>
-                    ))}
+                    {BOTTOM_ITEMS.map((item) => {
+                        const isActive = pathname === item.href;
+                        return (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                aria-label={item.name}
+                                aria-current={isActive ? 'page' : undefined}
+                                className={`
+                                    flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 group relative
+                                    hover:scale-[1.02] active:scale-[0.98]
+                                    ${isCollapsed ? 'justify-center' : ''}
+                                    ${isActive
+                                        ? 'bg-zinc-950 text-white font-black shadow-lg shadow-zinc-950/10'
+                                        : 'text-zinc-400 hover:text-zinc-950 hover:bg-zinc-200/50'}
+                                `}
+                            >
+                                <item.icon className="w-5 h-5 flex-shrink-0" />
+                                {!isCollapsed && (
+                                    <span className="text-[10px] font-bold uppercase tracking-widest">
+                                        {item.name}
+                                    </span>
+                                )}
+                                {isActive && !isCollapsed && (
+                                    <motion.div
+                                        layoutId="sidebar-pill-bottom"
+                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                        className="absolute left-0 w-1 h-4 bg-white/20 rounded-r-full"
+                                    />
+                                )}
+                            </Link>
+                        );
+                    })}
 
                     <button
                         onClick={() => window.location.href = '/'}
