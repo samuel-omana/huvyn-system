@@ -95,5 +95,15 @@ export const OrganicMesh = ({
         };
     }, [cols, rows, spacing, waveIntensity, speed, particleOpacity, minSize, maxSize]);
 
-    return <canvas ref={canvasRef} className={`absolute inset-0 w-full h-full pointer-events-none ${className}`} style={{ opacity }} />;
+    return (
+        <canvas
+            ref={canvasRef}
+            className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
+            style={{
+                opacity,
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            }}
+        />
+    );
 };

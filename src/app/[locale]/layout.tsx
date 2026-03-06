@@ -24,8 +24,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return {
-    metadataBase: new URL('https://huvyn.com'), // Replace with actual production URL
-    title: t('title'),
+    metadataBase: new URL('https://huvyn.com'),
+    title: {
+      template: 'Huvyn — %s',
+      default: 'Huvyn | Movemos tu mundo. Sin fricción.',
+    },
     description: t('heroSubtitle'),
     generator: 'Next.js',
     applicationName: 'Huvyn Global Logistics',
@@ -34,6 +37,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     authors: [{ name: 'Huvyn System' }],
     creator: 'Huvyn Tech',
     publisher: 'Huvyn Inc.',
+    icons: {
+      icon: '/icon.png',
+      shortcut: '/icon.png',
+      apple: '/icon.png',
+    },
     openGraph: {
       title: t('title'),
       description: t('heroSubtitle'),

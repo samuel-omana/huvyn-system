@@ -37,8 +37,8 @@ export default function AuthPage() {
                     opacity={0.85}
                     spacing={40}
                     particleOpacity={0.45}
-                    minSize={1.5}
-                    maxSize={3.0}
+                    minSize={0.8}
+                    maxSize={1.8}
                     waveIntensity={12}
                 />
 
