@@ -11,7 +11,7 @@ export default function RootTemplate({ children }: { children: ReactNode }) {
     // and recreate the DOM on Language or Route switch. This gives Framer Motion
     // a fresh IntersectionObserver slate, stopping the 'Opacity 0' bug.
     return (
-        <div key={pathname} className="flex flex-col flex-1 w-full">
+        <div className="flex flex-col flex-1 w-full">
             {children}
         </div>
     );
