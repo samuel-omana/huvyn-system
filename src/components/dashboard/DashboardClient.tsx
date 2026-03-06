@@ -53,10 +53,10 @@ export function DashboardClient({ children, serverCollapsed }: DashboardClientPr
         setIsSidebarCollapsed(newState);
         globalStateCache = newState;
 
-        // Update cookie for future SSR (using Secure and SameSite for production stability)
-        document.cookie = `huvyn_sidebar_final=${newState}; path=/; max-age=31536000; samesite=lax; secure`;
+        // Update cookie for future SSR (Standardizing for maximum compatibility)
+        document.cookie = `huvyn_sidebar_final=${newState}; path=/; max-age=31536000; samesite=lax`;
 
-        // Update DOM attribute for immediate CSS variable response
+        // Immediate DOM sync to ensure CSS variables respond before next React loop
         document.documentElement.setAttribute('data-sidebar-collapsed', newState ? 'true' : 'false');
     };
 

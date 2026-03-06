@@ -90,10 +90,15 @@ export default async function LocaleLayout({
               (function() {
                 try {
                   var cookie = document.cookie.split('; ').find(row => row.startsWith('huvyn_sidebar_final='));
-                  if (cookie) {
-                    var isCollapsed = cookie.split('=')[1] === 'true';
-                    document.documentElement.setAttribute('data-sidebar-collapsed', isCollapsed ? 'true' : 'false');
-                  }
+                  var isCollapsed = cookie ? cookie.split('=')[1] === 'true' : false;
+                  
+                  // 1. Set DOM attribute for CSS selectors
+                  document.documentElement.setAttribute('data-sidebar-collapsed', isCollapsed ? 'true' : 'false');
+                  
+                  // 2. Directly inject CSS variable to override any cached styles immediately
+                  var style = document.createElement('style');
+                  style.innerHTML = ':root { --sidebar-width: ' + (isCollapsed ? '80px' : '280px') + ' !important; }';
+                  document.head.appendChild(style);
                 } catch (e) {}
               })();
             `,
