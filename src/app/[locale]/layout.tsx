@@ -83,6 +83,23 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var cookie = document.cookie.split('; ').find(row => row.startsWith('huvyn_sidebar_final='));
+                  if (cookie) {
+                    var isCollapsed = cookie.split('=')[1] === 'true';
+                    document.documentElement.setAttribute('data-sidebar-collapsed', isCollapsed ? 'true' : 'false');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans bg-background text-foreground antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}

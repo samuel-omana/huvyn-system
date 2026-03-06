@@ -37,6 +37,8 @@ export function DashboardClient({ children, serverCollapsed }: DashboardClientPr
         if (globalStateCache === null) {
             globalStateCache = isSidebarCollapsed;
         }
+        // Force DOM attribute sync to ensure CSS variables match React state
+        document.documentElement.setAttribute('data-sidebar-collapsed', isSidebarCollapsed ? 'true' : 'false');
     }, [isSidebarCollapsed]);
 
     // 3. NAVIGATION DETECTION: Only for the header pulse
@@ -51,8 +53,11 @@ export function DashboardClient({ children, serverCollapsed }: DashboardClientPr
         setIsSidebarCollapsed(newState);
         globalStateCache = newState;
 
-        // Update cookie for future SSR
-        document.cookie = `huvyn_sidebar_final=${newState}; path=/; max-age=31536000; samesite=lax`;
+        // Update cookie for future SSR (using Secure and SameSite for production stability)
+        document.cookie = `huvyn_sidebar_final=${newState}; path=/; max-age=31536000; samesite=lax; secure`;
+
+        // Update DOM attribute for immediate CSS variable response
+        document.documentElement.setAttribute('data-sidebar-collapsed', newState ? 'true' : 'false');
     };
 
     return (
