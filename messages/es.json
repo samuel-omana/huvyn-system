@@ -161,7 +161,17 @@
     "about": "Nosotros",
     "arch": "Arquitectura",
     "tagline": "La capa de inteligencia para la orquestación de átomos. Moviendo átomos con precisión a nivel de bits.",
-    "login": "Iniciar Sesión"
+    "login": "Iniciar Sesión",
+    "socialLinkedin": "LinkedIn",
+    "socialGithub": "GitHub",
+    "socialTwitter": "Twitter",
+    "privacy": "Privacy",
+    "legal": "Legal",
+    "systemStatus": "System Status",
+    "locale": "Language",
+    "changeLanguage": "Change Language",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "Common": {
     "foundation": "Fundación",

@@ -2,7 +2,6 @@
 
 // Next.js requires global-error to catch errors in the root layout.
 export default function GlobalError({
-    error,
     reset,
 }: {
     error: Error & { digest?: string };

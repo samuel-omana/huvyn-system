@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Package, MapPin, Truck, CheckCircle2, Navigation2, Clock, ArrowRight, MessageSquare } from 'lucide-react';
+import { useNativeInView } from '@/hooks/useNativeInView';
+import { Truck, Navigation2 } from 'lucide-react';
 import { useState } from 'react';
 
 export default function TrackingPage() {
@@ -10,6 +11,8 @@ export default function TrackingPage() {
     const tc = useTranslations('Common');
     const [isSearching, setIsSearching] = useState(false);
     const [hasSearched, setHasSearched] = useState(false);
+
+    const { ref: trackingRef, isInView: isTrackingInView } = useNativeInView<HTMLDivElement>({ threshold: 0.1 });
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
@@ -20,12 +23,12 @@ export default function TrackingPage() {
         }, 1200);
     };
 
-    const fadeInUp: any = {
+    const fadeInUp: import('framer-motion').Variants = {
         initial: { opacity: 0, y: 30 },
         animate: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: 0.6, ease: "easeOut" }
         }
     };
 
@@ -128,6 +131,7 @@ export default function TrackingPage() {
                                 <motion.div variants={fadeInUp} className="bg-white rounded-[--radius-extreme] p-8 border border-black/[0.03] shadow-lg shadow-black/[0.01]">
                                     <h3 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#666666] mb-6 opacity-50">{t('scanningAudit')}</h3>
                                     <motion.div
+                                        ref={trackingRef}
                                         variants={{
                                             visible: {
                                                 transition: {
@@ -136,8 +140,7 @@ export default function TrackingPage() {
                                             }
                                         }}
                                         initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true, amount: 0 }}
+                                        animate={isTrackingInView ? "visible" : "hidden"}
                                         className="space-y-6 relative before:absolute before:inset-0 before:ml-3 before:h-full before:w-[1px] before:bg-zinc-100"
                                     >
                                         <motion.div variants={fadeInUp} className="relative flex items-start gap-8">

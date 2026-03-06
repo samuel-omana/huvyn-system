@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 
@@ -23,7 +22,7 @@ export function Hero({
     trackButton: string;
     securityBadge: string;
 }) {
-    const fadeInUp: any = {
+    const fadeInUp = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
         transition: { duration: 0.8, ease: "easeOut" }
@@ -98,11 +97,16 @@ export function Hero({
                         {trackLabel}
                     </div>
                     <input
-                        type="text"
+                        type="search"
+                        id="tracking-input"
+                        aria-label={trackLabel}
                         placeholder={trackPlaceholder}
                         className="w-full sm:flex-1 bg-transparent border-none outline-none px-5 sm:px-3 py-3 sm:py-2.5 text-center sm:text-left text-base placeholder:text-zinc-600 text-white font-medium shadow-none focus:ring-0"
                     />
-                    <button className="w-full sm:w-auto bg-white text-zinc-900 px-6 py-3.5 sm:py-2.5 rounded-full font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-zinc-100 transition-all group active:scale-95">
+                    <button
+                        aria-label={trackButton}
+                        className="w-full sm:w-auto bg-white text-zinc-900 px-6 py-3.5 sm:py-2.5 rounded-full font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-zinc-100 transition-all group active:scale-95"
+                    >
                         {trackButton}
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                     </button>

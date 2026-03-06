@@ -1,0 +1,16 @@
+{
+    "name": "Huvyn Global Logistics",
+    "short_name": "Huvyn",
+    "description": "Enterprise-grade shipment orchestration systems.",
+    "start_url": "/es",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#09090b",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32",
+            "type": "image/x-icon"
+        }
+    ]
+}

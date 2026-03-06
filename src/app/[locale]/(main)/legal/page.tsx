@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, Variants } from 'framer-motion';
+import { useNativeInView } from '@/hooks/useNativeInView';
 import { ShieldAlert, Scale, FileText } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -9,6 +10,8 @@ export default function LegalPage() {
     const t = useTranslations('LegalPage');
     const tc = useTranslations('Common');
     const [activeSection, setActiveSection] = useState('terms');
+
+    const { ref: contentRef, isInView: isContentInView } = useNativeInView<HTMLDivElement>({ threshold: 0.1 });
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -88,9 +91,9 @@ export default function LegalPage() {
                     </motion.div>
 
                     <motion.div
+                        ref={contentRef}
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.1 }}
+                        animate={{ opacity: isContentInView ? 1 : 0, y: isContentInView ? 0 : 20 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:col-span-9"
                     >

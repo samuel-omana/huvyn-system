@@ -2,12 +2,17 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Plane, Ship, Truck, Cpu, ArrowRight, Globe } from 'lucide-react';
+import { useNativeInView } from '@/hooks/useNativeInView';
+import { Plane, Ship, Truck, Cpu, ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export default function ServicesPage() {
     const t = useTranslations('ServicesPage');
     const tc = useTranslations('Common');
+
+    // Custom robust intersection observers
+    const { ref: techRef, isInView: isTechInView } = useNativeInView<HTMLDivElement>({ threshold: 0.1 });
+    const { ref: ctaRef, isInView: isCtaInView } = useNativeInView<HTMLDivElement>({ threshold: 0.1 });
 
     const capabilities = [
         { id: 'air', icon: Plane },
@@ -15,7 +20,7 @@ export default function ServicesPage() {
         { id: 'lastMile', icon: Truck }
     ];
 
-    const fadeInUp: any = {
+    const fadeInUp: import('framer-motion').Variants = {
         initial: { opacity: 0, y: 30 },
         animate: {
             opacity: 1,
@@ -87,9 +92,9 @@ export default function ServicesPage() {
 
                 {/* Tech Stack Module (Bento Style) */}
                 <motion.div
+                    ref={techRef}
                     initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px 0px" }}
+                    animate={{ opacity: isTechInView ? 1 : 0, y: isTechInView ? 0 : 40 }}
                     transition={{ duration: 1 }}
                     className="w-full max-w-7xl mx-auto px-6 mb-20"
                 >
@@ -117,7 +122,7 @@ export default function ServicesPage() {
                                         <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                                             <motion.div
                                                 initial={{ width: 0 }}
-                                                whileInView={{ width: `${60 + (i * 10)}%` }}
+                                                animate={{ width: isTechInView ? `${60 + (i * 10)}%` : '0%' }}
                                                 transition={{ duration: 2, delay: i * 0.2 }}
                                                 className="h-full bg-blue-500 shadow-[0_0_10px_rgba(37,99,235,0.8)]"
                                             ></motion.div>
@@ -131,9 +136,9 @@ export default function ServicesPage() {
 
                 {/* Final CTA */}
                 <motion.div
+                    ref={ctaRef}
                     initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-100px 0px" }}
+                    animate={{ opacity: isCtaInView ? 1 : 0, scale: isCtaInView ? 1 : 0.98 }}
                     className="text-center px-6 flex flex-col items-center mb-12"
                 >
                     <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-zinc-950 mb-10 max-w-2xl leading-[1.1]">{t('cta.title')}</h2>

@@ -1,10 +1,14 @@
 import { getTranslations } from 'next-intl/server';
-import { Hero } from '@/components/ui/Hero';
-import { BentoGrid } from '@/components/ui/BentoGrid';
-import { SocialProof } from '@/components/ui/SocialProof';
-import { Metrics } from '@/components/ui/Metrics';
-import { Testimonials } from '@/components/ui/Testimonials';
-import { OrganicMesh } from '@/components/ui/OrganicMesh';
+import { Hero } from '@/components/sections/Hero';
+import { BentoGrid } from '@/components/sections/BentoGrid';
+import { SocialProof } from '@/components/sections/SocialProof';
+import { Metrics } from '@/components/sections/Metrics';
+import { Testimonials } from '@/components/sections/Testimonials';
+import dynamic from 'next/dynamic';
+
+const OrganicMesh = dynamic(
+  () => import('@/components/ui/OrganicMesh').then((mod) => mod.OrganicMesh)
+);
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

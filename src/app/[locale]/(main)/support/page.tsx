@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, Variants } from 'framer-motion';
-import { HelpCircle, Shield, Truck, Package, Activity, ArrowRight, MessageSquare } from 'lucide-react';
+import { Shield, Package, Activity, ArrowRight, MessageSquare } from 'lucide-react';
 
 export default function SupportPage() {
     const t = useTranslations('SupportPage');

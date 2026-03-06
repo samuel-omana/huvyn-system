@@ -1,20 +1,28 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Globe2, Users, MapPin, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { siteConfig } from '@/config/siteConfig';
+import { motion, Variants } from 'framer-motion';
+import { useNativeInView } from '@/hooks/useNativeInView';
+import { Globe2, Users, MapPin } from 'lucide-react';
 
 export default function AboutPage() {
     const t = useTranslations('AboutPage');
 
-    const stats = [
-        { key: 'hubs', icon: MapPin },
-        { key: 'countries', icon: Globe2 },
-        { key: 'team', icon: Users }
-    ];
+    const { ref: globalRef, isInView: isGlobalInView } = useNativeInView<HTMLDivElement>({ threshold: 0.1 });
 
-    const fadeInUp: any = {
+    const icons = {
+        hubs: MapPin,
+        countries: Globe2,
+        team: Users
+    } as const;
+
+    const stats = siteConfig.aboutStats.map(stat => ({
+        key: stat.key,
+        icon: icons[stat.key as keyof typeof icons]
+    }));
+
+    const fadeInUp: Variants = {
         initial: { opacity: 0, y: 30 },
         animate: {
             opacity: 1,
@@ -76,9 +84,9 @@ export default function AboutPage() {
                 {/* Global Reach Section (Dark Bento Style) */}
                 <div className="w-full max-w-7xl mx-auto px-6">
                     <motion.div
+                        ref={globalRef}
                         initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "100px" }}
+                        animate={{ opacity: isGlobalInView ? 1 : 0, y: isGlobalInView ? 0 : 40 }}
                         transition={{ duration: 1 }}
                         className="bg-zinc-950 rounded-[--radius-extreme] p-12 md:p-16 text-white relative overflow-hidden flex flex-col items-center"
                     >
@@ -99,8 +107,7 @@ export default function AboutPage() {
                                         <motion.div
                                             key={stat.key}
                                             initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true, margin: "100px" }}
+                                            animate={{ opacity: isGlobalInView ? 1 : 0, y: isGlobalInView ? 0 : 20 }}
                                             transition={{ delay: i * 0.1, duration: 0.8 }}
                                             className="flex flex-col items-center gap-6"
                                         >

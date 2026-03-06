@@ -5,9 +5,7 @@ import { routing } from '@/i18n/routing';
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./../globals.css";
-import { Navbar } from '@/components/ui/Navbar';
-import { Footer } from '@/components/ui/Footer';
-import { BottomBlur } from '@/components/ui/BottomBlur';
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
@@ -24,8 +22,35 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return {
+    metadataBase: new URL('https://huvyn.com'), // Replace with actual production URL
     title: t('title'),
     description: t('heroSubtitle'),
+    generator: 'Next.js',
+    applicationName: 'Huvyn Global Logistics',
+    referrer: 'origin-when-cross-origin',
+    keywords: ['logistics', 'global trade', 'shipping', 'tracking', 'supply chain', 'Huvyn'],
+    authors: [{ name: 'Huvyn System' }],
+    creator: 'Huvyn Tech',
+    publisher: 'Huvyn Inc.',
+    openGraph: {
+      title: t('title'),
+      description: t('heroSubtitle'),
+      url: `https://huvyn.com/${locale}`,
+      siteName: 'Huvyn',
+      locale: locale,
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     alternates: {
       canonical: '/',
       languages: {

@@ -1,11 +1,12 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { Package, Twitter, Linkedin, Github } from 'lucide-react';
+import { Twitter, Linkedin, Github } from 'lucide-react';
 
 export function Footer() {
     const t = useTranslations('Navigation');
+    const locale = useLocale();
     const tf = useTranslations('Footer');
     const tc = useTranslations('Common');
     const th = useTranslations('ContactPage.hubs');
@@ -27,10 +28,16 @@ export function Footer() {
                         <p className="text-zinc-500 font-bold text-sm leading-relaxed max-w-[240px]">
                             {t('tagline') || "The intelligence layer for atom orchestration. Moving atoms with bit-level precision."}
                         </p>
-                        <div className="flex gap-4 pt-4 text-zinc-400">
-                            <a href="#" className="hover:text-zinc-950 transition-colors"><Twitter className="w-4 h-4" /></a>
-                            <a href="#" className="hover:text-zinc-950 transition-colors"><Linkedin className="w-4 h-4" /></a>
-                            <a href="#" className="hover:text-zinc-950 transition-colors"><Github className="w-4 h-4" /></a>
+                        <div className="flex gap-2">
+                            <Link href="#" aria-label={t('socialTwitter')} className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-900 shadow-sm hover:scale-110 transition-transform">
+                                <Twitter className="w-4 h-4" />
+                            </Link>
+                            <Link href="#" aria-label={t('socialLinkedin')} className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-900 shadow-sm hover:scale-110 transition-transform">
+                                <Linkedin className="w-4 h-4" />
+                            </Link>
+                            <Link href="#" aria-label={t('socialGithub')} className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-900 shadow-sm hover:scale-110 transition-transform">
+                                <Github className="w-4 h-4" />
+                            </Link>
                         </div>
                     </div>
 
@@ -73,6 +80,32 @@ export function Footer() {
                     </div>
                 </div>
 
+                {/* Bottom Bar */}
+                <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-black/[0.03] gap-4">
+                    <div className="flex items-center gap-4 text-xs font-bold text-zinc-400">
+                        <span>© 2026 Huvyn System</span>
+                        <div className="w-1 h-1 rounded-full bg-zinc-200"></div>
+                        <Link href="/privacy" className="hover:text-zinc-950 transition-colors uppercase tracking-widest">{t('privacy')}</Link>
+                        <div className="w-1 h-1 rounded-full bg-zinc-200"></div>
+                        <Link href="/legal" className="hover:text-zinc-950 transition-colors uppercase tracking-widest">{t('legal')}</Link>
+                    </div>
+                    <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#666666]">
+                            <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.4)] animate-pulse"></div>
+                            {t('systemStatus')}
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{t('locale')}</span>
+                            <button
+                                aria-label={t('changeLanguage')}
+                                className="bg-zinc-950 text-white font-black uppercase text-[10px] tracking-[0.3em] px-4 py-3 rounded-xl hover:bg-zinc-800 transition-all active:scale-95 cursor-default"
+                            >
+                                {locale.toUpperCase()}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="mt-16 pt-8 border-t border-black/[0.03] flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">
                     <p>© {currentYear} HUVYN SYSTEMS AG. {tf('rights')}</p>
                     <div className="flex gap-6">
@@ -84,4 +117,3 @@ export function Footer() {
         </footer>
     );
 }
-

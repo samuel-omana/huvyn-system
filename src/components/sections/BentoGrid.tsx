@@ -1,12 +1,15 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { siteConfig } from '@/config/siteConfig';
 import { motion, Variants } from 'framer-motion';
-import { Map, Zap, Tags, Globe2, ShieldCheck, Cpu } from 'lucide-react';
+import { useNativeInView } from '@/hooks/useNativeInView';
+import { Globe2, ShieldCheck, Cpu } from 'lucide-react';
 
 export function BentoGrid() {
     const t = useTranslations('HomePage');
     const tc = useTranslations('Common');
+    const { ref, isInView } = useNativeInView<HTMLDivElement>({ threshold: 0.1, triggerOnce: true });
 
     const container: Variants = {
         hidden: { opacity: 0 },
@@ -32,10 +35,10 @@ export function BentoGrid() {
 
     return (
         <motion.div
+            ref={ref}
             variants={container}
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0 }}
+            animate={isInView ? "show" : "hidden"}
             className="grid grid-cols-1 md:grid-cols-12 gap-6 w-full max-w-7xl mx-auto mt-12 px-6"
         >
             {/* Feature 1 - Global Intelligence (Big Card) */}
@@ -85,11 +88,11 @@ export function BentoGrid() {
                 </div>
                 <div className="flex-1 w-full bg-zinc-50 rounded-2xl p-8 flex items-center justify-center border border-black/[0.02] min-h-[220px]">
                     <div className="flex items-end gap-1.5 h-32 w-full opacity-60 group-hover:opacity-100 transition-all duration-700">
-                        {Array.from({ length: 20 }).map((_, i) => (
+                        {siteConfig.bentoLogic.latencyBars.map((height, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ height: 0 }}
-                                whileInView={{ height: `${20 + Math.random() * 80}%` }}
+                                animate={{ height: isInView ? `${20 + height * 0.8}%` : 0 }}
                                 className={`w-full rounded-sm transition-colors ${i === 15 ? 'bg-blue-600' : 'bg-zinc-200'}`}
                             ></motion.div>
                         ))}

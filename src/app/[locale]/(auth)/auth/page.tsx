@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { Eye, EyeOff, Network, ArrowLeft } from 'lucide-react';
+import { useRouter } from '@/i18n/routing';
+import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 import { OrganicMesh } from '@/components/ui/OrganicMesh';
@@ -12,6 +13,7 @@ type AuthState = 'login' | 'register' | 'recover';
 
 export default function AuthPage() {
     const t = useTranslations('AuthPage');
+    const router = useRouter();
     const [authState, setAuthState] = useState<AuthState>('login');
     const [showPassword, setShowPassword] = useState(false);
 
@@ -140,7 +142,10 @@ export default function AuthPage() {
                                             </div>
                                         </div>
 
-                                        <button className="w-full h-13 bg-zinc-950 text-white rounded-xl font-bold tracking-tight hover:shadow-lg hover:shadow-zinc-950/10 active:scale-[0.985] transition-all text-[16px] mt-1">
+                                        <button
+                                            onClick={() => router.push('/dashboard')}
+                                            className="w-full h-13 bg-zinc-950 text-white rounded-xl font-bold tracking-tight hover:shadow-lg hover:shadow-zinc-950/10 active:scale-[0.985] transition-all text-[16px] mt-1"
+                                        >
                                             {t('login.submit')}
                                         </button>
 

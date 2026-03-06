@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion, Variants } from 'framer-motion';
-import { Send, MapPin, Mail, Phone, Globe, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Globe, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactPage() {
