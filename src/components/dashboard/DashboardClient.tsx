@@ -20,10 +20,18 @@ const MemoizedSidebar = memo(Sidebar);
 export function DashboardClient({ children, serverCollapsed }: DashboardClientProps) {
     const pathname = usePathname();
 
-    // 1. STATE INITIALIZATION: Priority to global cache, then server cookie
+    // 1. STATE INITIALIZATION: Priority to global cache, then client cookie, finally server prop
     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(() => {
-        if (typeof window !== 'undefined' && globalStateCache !== null) {
-            return globalStateCache;
+        if (typeof window !== 'undefined') {
+            if (globalStateCache !== null) return globalStateCache;
+
+            // Read cookie directly to avoid cached 'serverCollapsed' from Edge/SSR cache
+            const cookieValue = document.cookie
+                .split('; ')
+                .find(row => row.startsWith('huvyn_sidebar_final='))
+                ?.split('=')[1];
+
+            if (cookieValue !== undefined) return cookieValue === 'true';
         }
         return serverCollapsed;
     });

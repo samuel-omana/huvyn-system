@@ -23,9 +23,9 @@ export function Sidebar({ isCollapsed, onCollapse, isMounted }: SidebarProps) {
         <>
             <motion.aside
                 initial={false}
-                animate={{
+                animate={isMounted ? {
                     width: isCollapsed ? 80 : 280,
-                }}
+                } : {}}
                 transition={isMounted ? { type: "spring", stiffness: 300, damping: 30 } : { duration: 0 }}
                 className="h-screen border-r border-zinc-200/50 bg-white/40 backdrop-blur-xl relative z-50 flex flex-col overflow-visible hidden md:flex"
                 style={{ width: 'var(--sidebar-width)' }}
