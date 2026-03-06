@@ -1,10 +1,8 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
 
 export default function RootTemplate({ children }: { children: ReactNode }) {
-    const pathname = usePathname();
 
     // The God-Tier Next.js SPA animation fix:
     // Binding the raw pathname to the key forces React to completely destroy

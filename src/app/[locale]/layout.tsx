@@ -5,6 +5,8 @@ import { routing } from '@/i18n/routing';
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./../globals.css";
+import { cookies } from 'next/headers';
+import { SidebarProvider } from '@/context/SidebarContext';
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -80,6 +82,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const cookieStore = await cookies();
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -107,7 +110,9 @@ export default async function LocaleLayout({
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans bg-background text-foreground antialiased flex flex-col min-h-screen`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
+          <SidebarProvider initialCollapsed={cookieStore.get('huvyn_sidebar_final')?.value === 'true'}>
+            {children}
+          </SidebarProvider>
         </NextIntlClientProvider>
       </body>
     </html>

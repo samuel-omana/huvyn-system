@@ -6,67 +6,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from '@/i18n/routing';
 import { GlobalErrorBoundary } from './GlobalErrorBoundary';
 
-interface DashboardClientProps {
-    children: React.ReactNode;
-    serverCollapsed: boolean;
-}
 
-// OMNI-PERSISTENCE: Lives in the JS environment across soft navigations
-let globalStateCache: boolean | null = null;
+import { useSidebar } from '@/context/SidebarContext';
 
 // MEMOIZED SIDEBAR: Ensures it NEVER re-renders unless props change
 const MemoizedSidebar = memo(Sidebar);
 
-export function DashboardClient({ children, serverCollapsed }: DashboardClientProps) {
+export function DashboardClient({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
-
-    // 1. STATE INITIALIZATION: Priority to global cache, then client cookie, finally server prop
-    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(() => {
-        if (typeof window !== 'undefined') {
-            if (globalStateCache !== null) return globalStateCache;
-
-            // Read cookie directly to avoid cached 'serverCollapsed' from Edge/SSR cache
-            const cookieValue = document.cookie
-                .split('; ')
-                .find(row => row.startsWith('huvyn_sidebar_final='))
-                ?.split('=')[1];
-
-            if (cookieValue !== undefined) return cookieValue === 'true';
-        }
-        return serverCollapsed;
-    });
-
-    const [isHydrated, setIsHydrated] = useState(false);
+    const { isCollapsed: isSidebarCollapsed, toggleSidebar, isHydrated } = useSidebar();
     const [isNavigating, setIsNavigating] = useState(false);
 
-    // 2. HYDRATION & INITIAL CACHE SYNC
-    useEffect(() => {
-        setTimeout(() => setIsHydrated(true), 0);
-        if (globalStateCache === null) {
-            globalStateCache = isSidebarCollapsed;
-        }
-        // Force DOM attribute sync to ensure CSS variables match React state
-        document.documentElement.setAttribute('data-sidebar-collapsed', isSidebarCollapsed ? 'true' : 'false');
-    }, [isSidebarCollapsed]);
-
-    // 3. NAVIGATION DETECTION: Only for the header pulse
+    // NAVIGATION DETECTION: Only for the header pulse
     useEffect(() => {
         setTimeout(() => setIsNavigating(true), 0);
         const timer = setTimeout(() => setIsNavigating(false), 400);
         return () => clearTimeout(timer);
     }, [pathname]);
-
-    const toggleSidebar = () => {
-        const newState = !isSidebarCollapsed;
-        setIsSidebarCollapsed(newState);
-        globalStateCache = newState;
-
-        // Update cookie for future SSR (Standardizing for maximum compatibility)
-        document.cookie = `huvyn_sidebar_final=${newState}; path=/; max-age=31536000; samesite=lax`;
-
-        // Immediate DOM sync to ensure CSS variables respond before next React loop
-        document.documentElement.setAttribute('data-sidebar-collapsed', newState ? 'true' : 'false');
-    };
 
     return (
         <div className="flex h-screen bg-zinc-50 text-zinc-950 selection:bg-zinc-200 font-sans overflow-hidden relative">
